@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - 3.7
+
+install:
+  - pip pipenv
+  - pipenv sync -d
+
+script:
+  - pipenv shell
+  - flake8 .
