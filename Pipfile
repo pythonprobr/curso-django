@@ -6,9 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 gunicorn = "*"
-pytest-django = "*"
 python-decouple = "*"
-pytest = "*"
 dj-database-url = "*"
 "psycopg2-binary" = "*"
 
@@ -16,6 +14,7 @@ dj-database-url = "*"
 "flake8" = "*"
 pytest-cov = "*"
 codecov = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.7"
