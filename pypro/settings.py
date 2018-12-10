@@ -145,7 +145,7 @@ if AWS_ACCESS_KEY_ID:
 
     COLLECTFAST_ENABLED = True
 
-    AWS_DEFAULT_ACL = None
+    AWS_DEFAULT_ACL = 'public-read'
 
     # Static Assets
     # ------------------------------------------------------------------------------
