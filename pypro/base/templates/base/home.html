@@ -10,7 +10,7 @@
 
     <meta name="description" content="Página do curso Python Pro">
     <meta name="author" content="Renzo Nuccitelli">
-
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -21,16 +21,17 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
 
-    </ul>
-  </div>
+        </ul>
+    </div>
 </nav>
 
 <div class="container-fluid">
@@ -39,15 +40,11 @@
 
             <div class="jumbotron">
                 <h2>
-                    Hello, world!
+                    Curso de Python com Luciano Ramalho
                 </h2>
                 <p>
-                    This is a template for a simple marketing or informational website. It includes a large callout
-                    called the hero unit and three supporting pieces of content. Use it as a starting point to create
-                    something more unique.
-                </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                    Confira em breve mais informações sobre o curso que será ministrado pelo autor do livro
+                    <a href="http://shop.oreilly.com/product/0636920032519.do" target="_blank">Python Fluente</a>
                 </p>
             </div>
         </div>
@@ -56,21 +53,25 @@
         <div class="col-md-12">
             <div class="card">
                 <h5 class="card-header">
-                    Card title
+                    Mais detalhes sobre o instrutor
                 </h5>
                 <div class="card-body">
                     <p class="card-text">
-                        Card content
+                        <img src="{% static 'img/luciano-ramalho.png' %}" alt="Foto de Luciano Ramalho"
+                             class="img-thumbnail float-left mr-3"/>
+                        Ramalho é sócio e professor na <a href="www.python.pro.br">Python Pro</a> e autor do Livro
+                        Python Fluente. Foi diretor técnico do Brasil Online, primeiro portal da Abril S/A na Web.
+                        Liderou times para os portais IDG Now, BOL, UOL, AOL Brasil e outros, usando Python desde 1998.
+                        Como instrutor, atendeu clientes como Citibank, CPqD, Serpro, Presidência da República,
+                        Globo.com e Itaú. Palestrante em eventos internacionais como FISL, PyCon US e OSCON. Ajudou a
+                        criar a Associação Python Brasil e foi seu presidente. É membro da Python Software Foundation e
+                        fundador do Garoa Hacker Clube, o primeiro hackerspace do Brasil.
+
                     </p>
-                </div>
-                <div class="card-footer">
-                    Card footer
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>
