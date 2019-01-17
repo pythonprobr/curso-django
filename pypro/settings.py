@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'pypro.base',
+    'pypro.aperitivos',
 ]
 
 MIDDLEWARE = [
