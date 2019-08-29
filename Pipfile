@@ -19,6 +19,7 @@ sentry-sdk = "*"
 pytest-cov = "*"
 codecov = "*"
 pytest-django = "*"
+model-mommy = "*"
 
 [requires]
 python_version = "3.7"
