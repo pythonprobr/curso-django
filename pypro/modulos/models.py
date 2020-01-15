@@ -24,6 +24,7 @@ class Aula(OrderedModel):
     slug = models.SlugField(unique=True)
     modulo = models.ForeignKey('Modulo', on_delete=models.PROTECT)
     order_with_respect_to = 'modulo'
+    vimeo_id = models.CharField(max_length=32)
 
     class Meta(OrderedModel.Meta):
         pass
