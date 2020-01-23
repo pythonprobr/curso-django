@@ -25,4 +25,4 @@ def encontrar_aula(slug):
 
 
 def listar_modulos_com_aulas():
-    return Modulo.objects.order_by('order').all()
+    return Modulo.objects.order_by('order').prefetch_related('aula_set').all()
