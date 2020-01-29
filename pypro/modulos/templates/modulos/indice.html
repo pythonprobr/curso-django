@@ -16,7 +16,7 @@
                 </dl>
                 <h2>Aulas</h2>
                 <ol>
-                    {% for aula in modulo.aula_set.all %}
+                    {% for aula in modulo.aulas %}
                         <li><a href="{{ aula.get_absolute_url }}">{{ aula.titulo }}</a></li>
                     {% endfor %}
                 </ol>
