@@ -41,8 +41,24 @@
                     {% endfor %}
                 </div>
             </li>
-
         </ul>
+    {% if user.is_authenticated %}
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    {{ user.first_name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-item">
+                        <a class="btn btn-danger" href="{% url 'logout' %}" >Sair</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    {% else %}
+    <a  class="btn btn-light  my-2" href="{% url 'login' %}">Entrar</a>
+    {% endif %}
     </div>
 </nav>
 
