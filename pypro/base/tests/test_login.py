@@ -2,6 +2,8 @@ import pytest
 from django.urls import reverse
 from model_mommy import mommy
 
+from pypro.django_assertions import assert_contains, assert_not_contains
+
 
 @pytest.fixture
 def resp(client, db):
@@ -30,3 +32,41 @@ def resp_post(client, usuario):
 def test_login_redirect(resp_post):
     assert resp_post.status_code == 302
     assert resp_post.url == reverse('modulos:indice')
+
+
+@pytest.fixture
+def resp_home(client, db):
+    return client.get(reverse('base:home'))
+
+
+def test_botao_entrar_disponivel(resp_home):
+    assert_contains(resp_home, 'Entrar')
+
+
+def test_link_de_login_disponivel(resp_home):
+    assert_contains(resp_home, reverse('login'))
+
+
+@pytest.fixture
+def resp_home_com_usuario_logado(client_com_usuario_logado, db):
+    return client_com_usuario_logado.get(reverse('base:home'))
+
+
+def test_botao_entrar_indisponivel(resp_home_com_usuario_logado):
+    assert_not_contains(resp_home_com_usuario_logado, 'Entrar')
+
+
+def test_link_de_login_indisponivel(resp_home_com_usuario_logado):
+    assert_not_contains(resp_home_com_usuario_logado, reverse('login'))
+
+
+def test_botao_sair_disponivel(resp_home_com_usuario_logado):
+    assert_contains(resp_home_com_usuario_logado, 'Sair')
+
+
+def test_nome_usuario_logado_disponivel(resp_home_com_usuario_logado, usuario_logado):
+    assert_contains(resp_home_com_usuario_logado, usuario_logado.first_name)
+
+
+def test_link_de_logout_disponivel(resp_home_com_usuario_logado):
+    assert_contains(resp_home_com_usuario_logado, reverse('logout'))
