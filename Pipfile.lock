@@ -34,7 +34,7 @@
             "hashes": [
                 "sha256:06dd5d0f2ed3570f60eab04b9f04d229ff980b55102447481992756efe268639"
             ],
-            "version": "==1.14.9"
+            "version": "==1.12.9"
         },
         "botocore": {
             "hashes": [
