@@ -16,6 +16,9 @@ sentry-sdk = "*"
 django-ordered-model = "*"
 ipython = "*"
 django-extensions = "*"
+boto-1-13-9 = "*"
+boto-1-14-9 = "*"
+boto-1-4-4 = "*"
 
 [dev-packages]
 "flake8" = "*"
