@@ -107,3 +107,10 @@ venv.bak/
 # postres files for local developemnt
 
 .pgdata
+.idea/*
+.idea/.gitignore
+.idea/curso-django.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
