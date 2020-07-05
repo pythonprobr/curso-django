@@ -1,1 +1,1 @@
-doskey mng=@python "C:\Users\carlo\PycharmProjects\curso-django1\manage.py" $*
+doskey mng=@python "C:\Users\carlo\PycharmProjects\curso-django\manage.py" $*
