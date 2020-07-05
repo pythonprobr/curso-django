@@ -3,6 +3,7 @@
     <words>
       <w>atualizado</w>
       <w>curso</w>
+      <w>gunicorn</w>
     </words>
   </dictionary>
 </component>
