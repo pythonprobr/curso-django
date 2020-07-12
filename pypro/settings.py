@@ -165,5 +165,5 @@ if AWS_ACCESS_KEY_ID:
 
 SENTRY_DSN = 'SENTRY_DSN'
 
-'''if SENTRY_DSN:
-    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])'''
+if SENTRY_DSN:
+    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
