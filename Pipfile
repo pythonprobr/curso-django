@@ -16,9 +16,10 @@ sentry-sdk = "*"
 django-ordered-model = "*"
 ipython = "*"
 django-extensions = "*"
+pytest-django = "*"
 
 [dev-packages]
-"flake8" = "*"
+flake8 = "*"
 pytest-cov = "*"
 codecov = "*"
 pytest-django = "*"

@@ -24,8 +24,8 @@ before_script:
   - psql -c "CREATE DATABASE testdb;" -U postgres
 
 script:
-  - pipenv run flake8
- ''' - pipenv run pytest --cov=pypro'''
+  - pipenv run flake8 .
+  - pipenv run pytest
 
 after_success:
- ''' - pipenv run codecov'''
+   - pipenv run codecov
