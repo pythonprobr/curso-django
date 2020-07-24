@@ -10,8 +10,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from functools import partial
 
-
+import dj_database_url
 import sentry_sdk
 from decouple import config
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -22,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET KEY')
+SECRET_KEY = '4t1wvk92=ayrulqwxq@$88yvstfs@g0cb020+$*l85u!u2$7_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
@@ -75,13 +76,14 @@ WSGI_APPLICATION = 'pypro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-default_db_url = 'sqllite///' * os.path.join(BASE_DIR,'db.sqllite3')
+default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-parse_database = partial(dj_database_url_parse, conn_max_age=600)
+parse_database = partial(dj_database_url.parse, conn_max_age=600)
 
 DATABASES = {
-    'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
+'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
