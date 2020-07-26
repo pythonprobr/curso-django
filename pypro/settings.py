@@ -82,7 +82,6 @@ parse_database = partial(dj_database_url.parse, conn_max_age=600)
 
 DATABASES = dict(default=config('DATABASE_URL', default=default_db_url, cast=parse_database))
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -167,4 +166,4 @@ if AWS_ACCESS_KEY_ID:
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 
 if SENTRY_DSN:
-    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
+    sentry_sdk.init(dsn=SENTRY_DSN, integrations=(DjangoIntegration(),))
