@@ -32,16 +32,17 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'collectfast',
+    'collectstatic',
     'pypro.base',
 
-]
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -160,8 +161,7 @@ if AWS_ACCESS_KEY_ID:
     MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
     MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
 
-    INSTALLED_APPS.append('s3_folder_storage')
-    INSTALLED_APPS.append('storages')
+    INSTALLED_APPS = ['s3_folder_storage', 'storages']  # Criando a Lista
 
 SENTRY_DSN = config('SENTRY_DSN', default=None)
 
