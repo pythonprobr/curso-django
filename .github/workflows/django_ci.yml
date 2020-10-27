@@ -1,0 +1,44 @@
+name: Python application
+
+on: [pull_request]
+
+jobs:
+  build:
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Copying configurations
+      run: |
+        cp contrib/env-sample .env
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        pipenv sync --dev
+    - name: Lint with flake8
+      run: |
+        pipenv run flake8 .
+    - name: Test with pytest
+      run: |
+        pipenv run pytest pypro --cov=pypro
+    - name: Posting Coverage
+      env:
+        CODECOV_TOKEN: "b7535fe9-9d72-41ea-a464-bc1827441315"
+      run: |
+        pipenv run codecov
