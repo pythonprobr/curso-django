@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function(){
+            let $modulosSelect=$('#modulos-select');
+            let $aulasSelect=$('#aulas-select');
+            let $ajaxLoaderImg=$('#ajax-loader');
+            $ajaxLoaderImg.hide();
+            function buscarAulas(moduloSlug){
+
+                $aulasSelect.empty();
+                $ajaxLoaderImg.show();
+                $aulasSelect.hide();
+                $.get('/modulos/api/aulas/'+moduloSlug, function(data){
+                    for (const aula of data.aulas){
+                        let s = '<option value="'+ aula.slug +'">'+ aula.titulo +'</option>';
+                        $aulasSelect.append(s);
+                    }
+                    $ajaxLoaderImg.hide();
+                    $aulasSelect.show();
+                });
+
+            }
+
+            buscarAulas($modulosSelect.val());
+            $modulosSelect.change(function(event){
+                buscarAulas($modulosSelect.val());
+            });
+        });
+
+    </script>
+</head>
+<body>
+<select id="modulos-select" >
+    {% for modulo in modulos %}
+        <option value="{{ modulo.slug }}">{{ modulo.titulo }}</option>
+    {% endfor %}
+</select>
+<br />
+<img id="ajax-loader" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/fancybox_loading.gif" />
+<select id="aulas-select"></select>
+
+</body>
+</html>

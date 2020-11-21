@@ -1,4 +1,7 @@
+from time import sleep
+
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render
 
 from pypro.modulos import facade
@@ -19,3 +22,16 @@ def detalhe(request, slug):
 def aula(request, slug):
     aula = facade.encontrar_aula(slug)
     return render(request, 'modulos/aula_detalhe.html', {'aula': aula})
+
+
+@login_required
+def form(request):
+    modulos = facade.listar_modulos_ordenados()
+    return render(request, 'modulos/modulo_form.html', {'modulos': modulos})
+
+
+def aula_api(request, slug):
+    sleep(5)
+    return JsonResponse({
+        'aulas':[aula.para_dicionario_serializavel_como_json() for aula in facade.listar_aulas_de_modulo(slug)]
+    })

@@ -34,3 +34,6 @@ class Aula(OrderedModel):
 
     def get_absolute_url(self):
         return reverse('modulos:aula', kwargs={'slug': self.slug})
+
+    def para_dicionario_serializavel_como_json(self):
+        return {'slug': self.slug, 'titulo': self.titulo}
