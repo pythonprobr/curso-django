@@ -7,8 +7,6 @@ python:
 
 services:
   postgresql
-addons:
-  postgresql: '9.5'
 
 env:
   global:
@@ -21,6 +19,7 @@ install:
   - cp contrib/env-sample .env
 
 before_script:
+  - sudo systemctl restart postgresql
   - psql -c "CREATE DATABASE testdb;" -U postgres
 
 script:
