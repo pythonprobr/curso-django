@@ -269,10 +269,10 @@
         },
         "s3transfer": {
             "hashes": [
-                "sha256:2482b4259524933a022d59da830f51bd746db62f047d6eb213f2f8855dcb8a13",
-                "sha256:921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db"
+                "sha256:2db91129803fa023bc71c16d106acac52c43409477a777910ae61a8279b4ee73",
+                "sha256:59867fd9482a3e2cf3179051b5a3e03051c78047c967e89d57a3ec41b058a980"
             ],
-            "version": "==0.3.3"
+            "version": "==0.3.5"
         },
         "sentry-sdk": {
             "hashes": [
