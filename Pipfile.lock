@@ -62,10 +62,10 @@
         },
         "decorator": {
             "hashes": [
-                "sha256:41fa54c2a0cc4ba648be4fd43cff00aedf5b9465c9bf18d64325bc225f08f760",
-                "sha256:e3a62f0520172440ca0dcc823749319382e377f37f140a0b99ef45fecb84bfe7"
+                "sha256:77a3141f7f5837b5de43569c35508ca4570022ba501db8c8a2a8b292bd35772a",
+                "sha256:bff00cfb18698f9a19fa6400451fd7ea894f3845cedd7b8b7b0ce9c53171fefb"
             ],
-            "version": "==4.4.2"
+            "version": "==5.0.8"
         },
         "dj-database-url": {
             "hashes": [
