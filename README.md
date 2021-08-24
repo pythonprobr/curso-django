@@ -1,7 +1,8 @@
 # Curso-Django
 
-
 Código desenvolvido no módulo de Django do [Site Python Pro](www.python.pro.br)
+
+Disponível em: https://pythonprodjangojarlan.herokuapp.com/
 
 Aplicação disponível em https://pythonprodjango.herokuapp.com/
 
