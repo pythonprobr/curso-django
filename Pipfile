@@ -23,6 +23,7 @@ pytest-cov = "*"
 codecov = "*"
 pytest-django = "*"
 model-mommy = "*"
+sync = "*"
 
 [requires]
 python_version = "3.9"
