@@ -1,5 +1,5 @@
 DEBUG=False
-SECRET_KEY=defina sua chave secreta
+SECRET_KEY=dwm9ip6o@5^u9ctq+!%96=o^68a1!s+k8cu&#t1_-sdb(xw$@y!
 ALLOWED_HOSTS=localhost, 127.0.0.1
 DATABASE_URL=postgres://postgres:postgres@localhost/testdb
 
