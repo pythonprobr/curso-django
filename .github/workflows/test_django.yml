@@ -1,0 +1,25 @@
+name: Curso Django
+
+on: [pull_request]
+
+jobs:
+  build:
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python 3.9.6
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9.6
+
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        pipenv sync --dev
+
+    - name: Lint with flake8
+      run: |
+        pipenv run flake8 .
