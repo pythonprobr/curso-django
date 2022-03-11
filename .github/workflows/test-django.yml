@@ -17,6 +17,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv sync --dev
+        cp contrib/env-sample.py .env
     - name: Lint with flake8
       run: |
         pipenv run flake8 .
+    - name: Test with pytest
+      run: |
+        pipenv run pytest --cov=pypro
+    - name: Relatório Coverage
+      env:
+        CODECOV_TOKEN: "c245ebc6-69b9-4522-a5cf-f9d16f4618a8"
+      run: |
+        pipenv run codecov
