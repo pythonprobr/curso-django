@@ -26,6 +26,6 @@ jobs:
         pipenv run pytest --cov=pypro
     - name: Relatório Coverage
       env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: "c245ebc6-69b9-4522-a5cf-f9d16f4618a8"
       run: |
         pipenv run codecov
