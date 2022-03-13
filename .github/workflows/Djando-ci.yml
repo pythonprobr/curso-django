@@ -1,6 +1,6 @@
 name: Curso Django Pro
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
