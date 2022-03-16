@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,11 +11,11 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
-    <link href="/static/css/bootstrap.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
-	<script src="/static/js/jquery.js"></script>
-    <script src="/static/js/bootstrap.js"></script>
-    <script src="/static/js/scripts.js"></script>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static 'css/style.css%'%}" rel="stylesheet">
+	<script src="{% static 'js/jquery.js%'%}"></script>
+    <script src="{% static 'js/bootstrap.js%'%}"></script>
+    <script src="{% static 'js/scripts.js%'%}"></script>
 
   </head>
   <body>
