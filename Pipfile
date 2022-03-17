@@ -6,23 +6,19 @@ name = "pypi"
 [packages]
 django = "*"
 gunicorn = "*"
+pytest-django = "*"
 python-decouple = "*"
 dj-database-url = "*"
-"psycopg2-binary" = "*"
-"django-s3-folder-storage" = "*"
+psycopg2-binary = "*"
+django-s3-folder-storage = "*"
 collectfast = "*"
 django-debug-toolbar = "*"
 sentry-sdk = "*"
-django-ordered-model = "*"
-ipython = "*"
-django-extensions = "*"
 
 [dev-packages]
-"flake8" = "*"
+flake8 = "*"
 pytest-cov = "*"
 codecov = "*"
-pytest-django = "*"
-model-mommy = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"

@@ -1,7 +1,7 @@
 """pypro URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,16 +15,13 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
+
+from pypro.base import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contas/', include('django.contrib.auth.urls')),
-    path('', include('pypro.base.urls')),
-    path('aperitivos/', include('pypro.aperitivos.urls')),
-    path('modulos/', include('pypro.modulos.urls')),
-    path('turmas/', include('pypro.turmas.urls')),
-]
+    path('', views.home, name='home'), ]
 
 if settings.DEBUG:
     import debug_toolbar
