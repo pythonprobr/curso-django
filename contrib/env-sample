@@ -1,1 +1,2 @@
 DEBUG=False
+SECRET_KEY= Defina sua chave secreta
