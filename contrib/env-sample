@@ -1,4 +1,8 @@
-DEBUG=False
-SECRET_KEY= Defina sua chave secreta
+DEBUG=True
+SECRET_KEY= CHAVE SECRETA
 ALLOWED_HOSTS=localhost, 127.0.0.1
 DATABASE_URL = postgres://postgres:postgres@localhost/testdb
+
+AWS_ACCESS_KEY_ID = AKIAXWNLPE35J7OPC6UJ
+AWS_SECRET_ACCESS_KEY = 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
+AWS_STORAGE_BUCKET_NAME = diegodjango
