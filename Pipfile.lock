@@ -40,10 +40,10 @@
         },
         "botocore": {
             "hashes": [
-                "sha256:31f04b68a6ebe8cfa97b4d70f54f29aef8b6a0bc9c4da7b8ee9b6a53fc69edae",
-                "sha256:3de32a03679bb172a41c38e3c9af3f7259f3637f705aa2ac384b3233dc985b85"
+                "sha256:b3b9710902f675a11f5bfd46afda770150530876ae6541d099584462bf949fd1",
+                "sha256:f117d59899d21beeb200130d7af2090a8112d702a06e2c2794ef576bcea36773"
             ],
-            "version": "==1.18.6"
+            "version": "==1.27.16"
         },
         "certifi": {
             "hashes": [
